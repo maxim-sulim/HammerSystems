@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB0DC9182A44733100B3F126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0DC9172A44733100B3F126 /* AppDelegate.swift */; };
+		AB0DC91A2A44733100B3F126 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0DC9192A44733100B3F126 /* SceneDelegate.swift */; };
+		AB0DC91F2A44733100B3F126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0DC91D2A44733100B3F126 /* Main.storyboard */; };
+		AB0DC9212A44733200B3F126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB0DC9202A44733200B3F126 /* Assets.xcassets */; };
+		AB0DC9242A44733200B3F126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0DC9222A44733200B3F126 /* LaunchScreen.storyboard */; };
+		ABDD57662A4475CF00E2A148 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD57652A4475CF00E2A148 /* MenuModel.swift */; };
+		ABDD57682A44760400E2A148 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD57672A44760400E2A148 /* MenuTableViewCell.swift */; };
+		ABDD576A2A44762100E2A148 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD57692A44762100E2A148 /* TabBarViewController.swift */; };
+		ABDD576C2A44764900E2A148 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD576B2A44764900E2A148 /* ContactViewController.swift */; };
+		ABDD576E2A44765700E2A148 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD576D2A44765700E2A148 /* BasketViewController.swift */; };
+		ABDD57702A44766C00E2A148 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD576F2A44766C00E2A148 /* ProfileViewController.swift */; };
+		ABDD57722A44768100E2A148 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD57712A44768100E2A148 /* MenuViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AB0DC9142A44733100B3F126 /* HummerSys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HummerSys.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB0DC9172A44733100B3F126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB0DC9192A44733100B3F126 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AB0DC91E2A44733100B3F126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AB0DC9202A44733200B3F126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB0DC9232A44733200B3F126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AB0DC9252A44733200B3F126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABDD57652A4475CF00E2A148 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		ABDD57672A44760400E2A148 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		ABDD57692A44762100E2A148 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		ABDD576B2A44764900E2A148 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		ABDD576D2A44765700E2A148 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		ABDD576F2A44766C00E2A148 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		ABDD57712A44768100E2A148 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB0DC9112A44733100B3F126 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB0DC90B2A44733100B3F126 = {
+			isa = PBXGroup;
+			children = (
+				AB0DC9162A44733100B3F126 /* HummerSys */,
+				AB0DC9152A44733100B3F126 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB0DC9152A44733100B3F126 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB0DC9142A44733100B3F126 /* HummerSys.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB0DC9162A44733100B3F126 /* HummerSys */ = {
+			isa = PBXGroup;
+			children = (
+				ABDD575B2A44741000E2A148 /* Model */,
+				ABDD575C2A44741600E2A148 /* View */,
+				ABDD575E2A44743700E2A148 /* Controller */,
+				AB0DC9172A44733100B3F126 /* AppDelegate.swift */,
+				AB0DC9192A44733100B3F126 /* SceneDelegate.swift */,
+				AB0DC91D2A44733100B3F126 /* Main.storyboard */,
+				AB0DC9202A44733200B3F126 /* Assets.xcassets */,
+				AB0DC9222A44733200B3F126 /* LaunchScreen.storyboard */,
+				AB0DC9252A44733200B3F126 /* Info.plist */,
+			);
+			path = HummerSys;
+			sourceTree = "<group>";
+		};
+		ABDD575B2A44741000E2A148 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABDD57652A4475CF00E2A148 /* MenuModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABDD575C2A44741600E2A148 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABDD57672A44760400E2A148 /* MenuTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABDD575E2A44743700E2A148 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABDD57692A44762100E2A148 /* TabBarViewController.swift */,
+				ABDD57712A44768100E2A148 /* MenuViewController.swift */,
+				ABDD576B2A44764900E2A148 /* ContactViewController.swift */,
+				ABDD576D2A44765700E2A148 /* BasketViewController.swift */,
+				ABDD576F2A44766C00E2A148 /* ProfileViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB0DC9132A44733100B3F126 /* HummerSys */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB0DC9282A44733200B3F126 /* Build configuration list for PBXNativeTarget "HummerSys" */;
+			buildPhases = (
+				AB0DC9102A44733100B3F126 /* Sources */,
+				AB0DC9112A44733100B3F126 /* Frameworks */,
+				AB0DC9122A44733100B3F126 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HummerSys;
+			productName = HummerSys;
+			productReference = AB0DC9142A44733100B3F126 /* HummerSys.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB0DC90C2A44733100B3F126 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					AB0DC9132A44733100B3F126 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = AB0DC90F2A44733100B3F126 /* Build configuration list for PBXProject "HummerSys" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB0DC90B2A44733100B3F126;
+			productRefGroup = AB0DC9152A44733100B3F126 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB0DC9132A44733100B3F126 /* HummerSys */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB0DC9122A44733100B3F126 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0DC9242A44733200B3F126 /* LaunchScreen.storyboard in Resources */,
+				AB0DC9212A44733200B3F126 /* Assets.xcassets in Resources */,
+				AB0DC91F2A44733100B3F126 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB0DC9102A44733100B3F126 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0DC9182A44733100B3F126 /* AppDelegate.swift in Sources */,
+				AB0DC91A2A44733100B3F126 /* SceneDelegate.swift in Sources */,
+				ABDD576E2A44765700E2A148 /* BasketViewController.swift in Sources */,
+				ABDD57682A44760400E2A148 /* MenuTableViewCell.swift in Sources */,
+				ABDD57722A44768100E2A148 /* MenuViewController.swift in Sources */,
+				ABDD576A2A44762100E2A148 /* TabBarViewController.swift in Sources */,
+				ABDD57662A4475CF00E2A148 /* MenuModel.swift in Sources */,
+				ABDD57702A44766C00E2A148 /* ProfileViewController.swift in Sources */,
+				ABDD576C2A44764900E2A148 /* ContactViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AB0DC91D2A44733100B3F126 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB0DC91E2A44733100B3F126 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AB0DC9222A44733200B3F126 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB0DC9232A44733200B3F126 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB0DC9262A44733200B3F126 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AB0DC9272A44733200B3F126 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB0DC9292A44733200B3F126 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 65ZT2PZTN2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HummerSys/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sulim.cool.HummerSys;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB0DC92A2A44733200B3F126 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 65ZT2PZTN2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HummerSys/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sulim.cool.HummerSys;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB0DC90F2A44733100B3F126 /* Build configuration list for PBXProject "HummerSys" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB0DC9262A44733200B3F126 /* Debug */,
+				AB0DC9272A44733200B3F126 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB0DC9282A44733200B3F126 /* Build configuration list for PBXNativeTarget "HummerSys" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB0DC9292A44733200B3F126 /* Debug */,
+				AB0DC92A2A44733200B3F126 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB0DC90C2A44733100B3F126 /* Project object */;
+}
