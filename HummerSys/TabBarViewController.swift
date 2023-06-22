@@ -12,7 +12,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tabBar.tintColor = .red
+        self.tabBar.tintColor = Resources.Color.activeRed
     }
     
 

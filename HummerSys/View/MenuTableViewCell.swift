@@ -19,13 +19,19 @@ class MenuTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configureLablePrice()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    }
+    
+    private func configureLablePrice() {
+        self.priceMenu.textColor = Resources.Color.activeRed
+        self.priceMenu.layer.cornerRadius = 6
+        self.priceMenu.layer.borderWidth = 1.0
+        self.priceMenu.layer.borderColor = Resources.Color.activeRed.cgColor
     }
 
 }
