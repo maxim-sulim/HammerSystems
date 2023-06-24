@@ -10,10 +10,17 @@ import Foundation
 
 protocol CategoryProtocol{
     var name: String { get set }
+    var order: Int { get set }
+    var isSelected: Bool { get set }
 }
 
 struct Category: CategoryProtocol {
+    var order: Int
+    
     var name: String
+    
+    var isSelected: Bool
+    
 }
 
 enum CategoryName {

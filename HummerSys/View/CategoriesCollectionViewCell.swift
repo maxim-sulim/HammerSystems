@@ -9,21 +9,94 @@ import UIKit
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
     
+    struct ViewModel{
+        var index: Int = 0
+        var name: String = ""
+        var isSelected: Bool = false
+        
+    }
     
-    @IBOutlet weak var categoriLable: UILabel!
+    private var model = ViewModel()
     
+    func configure(with viewModel: ViewModel) {
+        
+        model = viewModel
+        categoriBut.setTitle(viewModel.name, for: .normal)
+        
+        configureLableCategory(button: self.categoriBut)
+        
+        
+        if viewModel.isSelected == false {
+            
+            
+            categoriBut.backgroundColor = .clear
+            categoriBut.layer.borderWidth = 1.0
+            categoriBut.layer.borderColor = Resources.Color.categorBackground.withAlphaComponent(0.2).cgColor
+            
+            
+            let fontNoActive = UIFont.systemFont(ofSize: 13)
+            let myNormalAttributedTitle = NSAttributedString(string: viewModel.name,
+                                                             attributes: [NSAttributedString.Key.font: fontNoActive ])
+            categoriBut.setAttributedTitle(myNormalAttributedTitle, for: .normal)
+            
+            categoriBut.setTitleColor(Resources.Color.categorBackground.withAlphaComponent(0.4), for: .normal)
+            
+        } else if viewModel.isSelected == true {
+            categoriBut.layer.borderWidth = 0
+            
+            let fontActive = UIFont.boldSystemFont(ofSize: 13)
+            
+            let myActivelAttributedTitle = NSAttributedString(string: viewModel.name,
+                                                              attributes: [NSAttributedString.Key.font: fontActive ])
+            categoriBut.setAttributedTitle(myActivelAttributedTitle, for: .normal)
+            categoriBut.setTitleColor(Resources.Color.activeRed, for: .normal)
+            categoriBut.tintColor = Resources.Color.activeRed
+            categoriBut.layer.backgroundColor = Resources.Color.categorBackground.withAlphaComponent(0.2).cgColor
+        }
+        
+    }
+    
+    func configureLableCategory(button: UIButton) {
+        
+        button.tintColor = Resources.Color.categorBackground.withAlphaComponent(0.4)
+        button.layer.cornerRadius = 16
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = Resources.Color.categorBackground.withAlphaComponent(0.4).cgColor
+        
+}
+    
+
+    
+    weak var delegate: CategoryCollectionProtocol?
     
     override class func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
-        func configureLableCategory() {
-        self.categoriLable.textColor = Resources.Color.activeRed
-      //  self.categoriLable.backgroundColor = Resources.Color.categorBackground
-        self.categoriLable.layer.cornerRadius = 16
-        self.categoriLable.layer.borderWidth = 1.0
-        self.categoriLable.layer.borderColor = Resources.Color.categorBackground.cgColor
+    @IBOutlet weak var categoriBut: UIButton!
+    
+    @IBAction func categoryAction(_ sender: Any) {
+                
+        let element = delegate?.categoriesArr
+        
+       
+        if var element = element {
+            
+            
+            
+            for i in 0..<element.count {
+                if element[i].isSelected == true {
+                    element[i].isSelected = false
+                }
+            }
+            
+            element[model.index].isSelected = true
+            delegate?.categoriesArr = element
+            delegate?.reloadCategories(index: model.index)
+        }
+        
+        
     }
-  
+        
 }

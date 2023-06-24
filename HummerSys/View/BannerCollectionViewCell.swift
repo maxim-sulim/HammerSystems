@@ -18,8 +18,8 @@ class BannerCollectionViewCell: UICollectionViewCell {
     }
     
     func configureLableBanner() {
-    self.bannerImage.layer.cornerRadius = 10
-    self.bannerImage.backgroundColor = Resources.Color.categorBackground
+        self.bannerImage.layer.cornerRadius = 10
+        self.bannerImage.backgroundColor = Resources.Color.categorBackground
         self.bannerImage.contentMode = .scaleAspectFill
     }
 }
