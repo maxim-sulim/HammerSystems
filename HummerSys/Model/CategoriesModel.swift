@@ -14,7 +14,7 @@ protocol CategoryProtocol{
     var isSelected: Bool { get set }
 }
 
-struct Category: CategoryProtocol {
+struct CategoryF: CategoryProtocol {
     var order: Int
     
     var name: String

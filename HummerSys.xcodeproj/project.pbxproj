@@ -19,6 +19,7 @@
 		AB1A52A02A44B8620024ECFB /* BannerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A529F2A44B8620024ECFB /* BannerCollectionViewController.swift */; };
 		AB1A52A22A44B8CE0024ECFB /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A52A12A44B8CE0024ECFB /* BannerCollectionViewCell.swift */; };
 		AB1A52A42A44BA460024ECFB /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A52A32A44BA460024ECFB /* BannerModel.swift */; };
+		AB1A52A82A47835E0024ECFB /* customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A52A72A47835E0024ECFB /* customer.swift */; };
 		ABDD57662A4475CF00E2A148 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD57652A4475CF00E2A148 /* MenuModel.swift */; };
 		ABDD57682A44760400E2A148 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD57672A44760400E2A148 /* MenuTableViewCell.swift */; };
 		ABDD576A2A44762100E2A148 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD57692A44762100E2A148 /* TabBarViewController.swift */; };
@@ -40,6 +41,7 @@
 		AB1A529F2A44B8620024ECFB /* BannerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BannerCollectionViewController.swift; path = Controller/BannerCollectionViewController.swift; sourceTree = "<group>"; };
 		AB1A52A12A44B8CE0024ECFB /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB1A52A32A44BA460024ECFB /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		AB1A52A72A47835E0024ECFB /* customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customer.swift; sourceTree = "<group>"; };
 		ABDD57652A4475CF00E2A148 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		ABDD57672A44760400E2A148 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		ABDD57692A44762100E2A148 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				ABDD57652A4475CF00E2A148 /* MenuModel.swift */,
 				AB1A529D2A44A63C0024ECFB /* CategoriesModel.swift */,
 				AB1A52A32A44BA460024ECFB /* BannerModel.swift */,
+				AB1A52A72A47835E0024ECFB /* customer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				AB1A52922A44920C0024ECFB /* UIColor + ext.swift in Sources */,
 				ABDD57682A44760400E2A148 /* MenuTableViewCell.swift in Sources */,
 				AB1A52982A44A0820024ECFB /* CategoriesCollectionViewCell.swift in Sources */,
+				AB1A52A82A47835E0024ECFB /* customer.swift in Sources */,
 				AB1A52A42A44BA460024ECFB /* BannerModel.swift in Sources */,
 				ABDD57722A44768100E2A148 /* MenuViewController.swift in Sources */,
 				ABDD576A2A44762100E2A148 /* TabBarViewController.swift in Sources */,

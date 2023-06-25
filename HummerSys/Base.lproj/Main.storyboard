@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -89,6 +88,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="M9U-Wo-We3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="w5z-PQ-U9c"/>
+                                </connections>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="thf-Af-KZc">
                                 <rect key="frame" x="0.0" y="299" width="393" height="52"/>
@@ -144,13 +147,12 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-t3-ahv">
-                                <rect key="frame" x="16" y="79" width="83" height="20"/>
+                                <rect key="frame" x="16" y="79" width="87" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="JpZ-vX-Ozd"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" imagePadding="8">
-                                    <imageReference key="image" image="control" catalog="system" symbolScale="small"/>
+                                <buttonConfiguration key="configuration" style="plain" image="control" imagePlacement="trailing" imagePadding="10">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Москва">
                                             <attributes>
@@ -311,7 +313,7 @@
     </scenes>
     <resources>
         <image name="basket.fill" catalog="system" width="128" height="108"/>
-        <image name="control" catalog="system" width="128" height="70"/>
+        <image name="control" width="17" height="18"/>
         <image name="menucard.fill" catalog="system" width="105" height="128"/>
         <image name="paperplane.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

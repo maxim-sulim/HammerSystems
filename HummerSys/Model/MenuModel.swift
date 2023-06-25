@@ -12,11 +12,11 @@ protocol MenuProtocol{
     var description: String { get set }
     var image: String { get set }
     var price: String { get set }
-    var ctegory: Category { get set }
+    var category: CategoryF { get set }
 }
 
 struct Menu: MenuProtocol {
-    var ctegory: Category
+    var category: CategoryF
     
     var name: String
     

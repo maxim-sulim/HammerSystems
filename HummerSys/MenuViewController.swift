@@ -6,10 +6,10 @@
 //
 
 import UIKit
+import Foundation
 
 protocol CategoryCollectionProtocol: AnyObject {
-    //var controllerCollection: MenuViewController? { get set }
-    var categoriesArr: [CategoryProtocol] { get set }
+    var categoriesArrCustomer: [Category] { get set }
     func reloadCategories(index: Int)
 }
 
@@ -17,42 +17,44 @@ protocol CategoryCollectionProtocol: AnyObject {
 class MenuViewController: UIViewController, CategoryCollectionProtocol {
     
     
-    func reloadCategories(index: Int) {
-        self.categoryCollectionView.reloadData()
-        var nameCater = categoriesArr[index].name
-        
-        if let menuIndex = dataMenu.firstIndex(where: { $0.ctegory.name == nameCater }) {
-            scrolNeedIndex(indexRow: menuIndex)
-        }
-    }
-    
     @IBOutlet weak var constrainCategory: NSLayoutConstraint!
-    
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var bannerCollection: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     
-   // отслеживать смещение прокрутки
-   fileprivate var scrollOffset: CGPoint = CGPoint()
+    // отслеживать смещение прокрутки
+    fileprivate var scrollOffset: CGPoint = CGPoint()
     
-    var categoriesArr = [CategoryProtocol]()
     
-    var dataMenu = [MenuProtocol]()
+    var categoriesArrCustomer = [Category]()
+    
+    
+    var dataMenuCustomer = [ArrItem]()
     
     var bannerDel = BannerCollectionViewController()
-    
-  
+    //количество запросов к Api
+    let requestCount = 28
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        setupConfigureController()
-        loadTable()
         loadCategories()
+        setupConfigureController()
         bannerDel.loadBanners()
         setupTabbleLayer()
         setupViewLayer()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if dataMenuCustomer.isEmpty {
+            self.loadDataMenu()
+        }
+    }
+  
+    //MARK: Configure
     
     func setupConfigureController() {
         self.tableView.delegate = self
@@ -85,69 +87,80 @@ class MenuViewController: UIViewController, CategoryCollectionProtocol {
         self.bannerCollection.layer.backgroundColor = Resources.Color.backgroungView.cgColor
     }
     
+    func reloadCategories(index: Int) {
+        self.categoryCollectionView.reloadData()
+        let nameCater = categoriesArrCustomer[index].name
+        
+        if let menuIndex = dataMenuCustomer.firstIndex(where: { $0.category.name == nameCater }) {
+            scrolNeedIndex(indexRow: menuIndex)
+        }
+    }
+    
     func scrolNeedIndex(indexRow: Int) {
-        var indexPath = NSIndexPath(row: indexRow, section: 0)
+        let indexPath = NSIndexPath(row: indexRow, section: 0)
         self.tableView.scrollToRow(at: indexPath as IndexPath,
                                    at: UITableView.ScrollPosition.middle,
                                    animated: true)
     }
     
-// MARK: установка начальных данных
-    
-    private func loadTable() {
-        
-        dataMenu.append(Menu(ctegory: Category(order: 1, name: CategoryName.pizza, isSelected: true),
-                             name: "Ветчина и грибы",
-                             description: "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус",
-                             image: "pizzaImage",
-                             price: "от 320"))
-        dataMenu.append(Menu(ctegory: Category(order: 1, name: CategoryName.pizza, isSelected: false),
-                             name: "Баварские колбаски",
-                             description: "Баварски колбаски,ветчина, пикантная пепперони, острая чоризо, моцарелла, томатный соус",
-                             image: "pizzaImage",
-                             price: "от 320"))
-        dataMenu.append(Menu(ctegory: Category(order: 1, name: CategoryName.pizza, isSelected: false),
-                             name: "Нежный лосось",
-                             description: "Лосось, томаты черри, моцарелла, соус песто",
-                             image: "pizzaImage",
-                             price: "от 320"))
-        dataMenu.append(Menu(ctegory: Category(order: 1, name: CategoryName.pizza, isSelected: false),
-                             name: "Пицца четыре сыра",
-                             description: "Соус Карбонара, Сыр Моцарелла, Сыр Пармезан, Сыр Роккфорти, Сыр Чеддер (тёртый)",
-                             image: "pizzaImage",
-                             price: "от 320"))
-        dataMenu.append(Menu(ctegory: Category(order: 2, name: CategoryName.combo, isSelected: false),
-                             name: "КОМБО и грибы",
-                             description: "Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус",
-                             image: "pizzaImage",
-                             price: "от 450"))
-        dataMenu.append(Menu(ctegory: Category(order: 2, name: CategoryName.combo, isSelected: false),
-                             name: "КОМБО Баварское",
-                             description: "Баварски колбаски,ветчина, пикантная пепперони, острая чоризо, моцарелла, томатный соус",
-                             image: "pizzaImage",
-                             price: "от 450"))
-        dataMenu.append(Menu(ctegory: Category(order: 2, name: CategoryName.combo, isSelected: false),
-                             name: "КОМБО Нежный",
-                             description: "Лосось, томаты черри, моцарелла, соус песто",
-                             image: "pizzaImage",
-                             price: "от 450"))
-        dataMenu.append(Menu(ctegory: Category(order: 2, name: CategoryName.combo, isSelected: false),
-                             name: "КОМБО четыре сыра",
-                             description: "Соус Карбонара, Сыр Моцарелла, Сыр Пармезан, Сыр Роккфорти, Сыр Чеддер (тёртый)",
-                             image: "pizzaImage",
-                             price: "от 450"))
-        
-       dataMenu = dataMenu.sorted(by: { $0.ctegory.order < $1.ctegory.order})
-    }
+    // MARK: установка начальных данных
     
     func loadCategories() {
-        categoriesArr.append(Category(order: 1, name: CategoryName.pizza, isSelected: true))
-        categoriesArr.append(Category(order: 2, name: CategoryName.combo, isSelected: false))
-        categoriesArr.append(Category(order: 3, name: CategoryName.desserts, isSelected: false))
-        categoriesArr.append(Category(order: 4, name: CategoryName.drinks, isSelected: false))
+        categoriesArrCustomer.append(Category(order: "1", name: CategoryName.pizza, isSelected: true))
+        categoriesArrCustomer.append(Category(order: "2", name: CategoryName.combo, isSelected: false))
+        categoriesArrCustomer.append(Category(order: "3", name: CategoryName.desserts, isSelected: false))
+        categoriesArrCustomer.append(Category(order: "4", name: CategoryName.drinks, isSelected: false))
     }
-
     
+    //MARK: установка категорий для прдметов меню и их сортировка
+    func sortedArrMenu() {
+        for i in 0..<dataMenuCustomer.count{
+            if dataMenuCustomer[i].category.name == CategoryName.pizza {
+                dataMenuCustomer[i].category.order = "1"
+            } else if dataMenuCustomer[i].category.name == CategoryName.combo {
+                dataMenuCustomer[i].category.order = "2"
+            } else if dataMenuCustomer[i].category.name == CategoryName.desserts {
+                dataMenuCustomer[i].category.order = "3"
+            } else if dataMenuCustomer[i].category.name == CategoryName.drinks {
+                dataMenuCustomer[i].category.order = "4"
+            }
+        }
+        let sortMenu = self.dataMenuCustomer.sorted(by: { Int($0.category.order) ?? 0
+            < Int($1.category.order) ?? 1 })
+        
+        self.dataMenuCustomer = sortMenu
+    }
+    
+    
+    //MARK: Работа с сетью
+    func loadDataMenu() {
+        
+        let strUrl = "https://randomapi.com/api/4tx32fdb?key=0USK-03CB-VLOM-BWJE"
+        let url = URL(string: strUrl)!
+        let urlRequest = URLRequest(url: url)
+        
+        
+        for _ in 0..<self.requestCount {
+            
+            URLSession.shared.dataTask(with: urlRequest) { data , response , error in
+                
+                guard let data = data else {
+                    return }
+                
+                if let arrJs = try? JSONDecoder().decode(Welcome.self, from: data) {
+                    
+                    let arrItems = arrJs.results
+                    self.dataMenuCustomer.append(contentsOf: (arrItems.first?.customer.arrItem)!)
+                    
+                    DispatchQueue.main.async {
+                        
+                        self.tableView.reloadData()
+                    }
+                }
+            }.resume()
+        }
+        
+    }
     
 }
 
@@ -155,19 +168,42 @@ class MenuViewController: UIViewController, CategoryCollectionProtocol {
 //MARK: MenuTable delagate
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dataMenu.count
+        dataMenuCustomer.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MenuTableViewCell
-        cell.nameMenu.text = dataMenu[indexPath.row].name
-        cell.descriptionMenu.text = dataMenu[indexPath.row].description
-        cell.priceMenu.text = dataMenu[indexPath.row].price
-        cell.imageMenu.image = UIImage(named:dataMenu[indexPath.row].image)
         
+        if dataMenuCustomer.count >= 3  {
+            
+            sortedArrMenu()
+            cell.nameMenu.text = dataMenuCustomer[indexPath.row].name
+            cell.descriptionMenu.text = dataMenuCustomer[indexPath.row].description
+            if dataMenuCustomer[indexPath.row].category.name == CategoryName.pizza  {
+                cell.priceMenu.text = "от 380"
+                cell.imageMenu.image = UIImage(named:"pizzaImage")
+            } else if dataMenuCustomer[indexPath.row].category.name == CategoryName.combo {
+                cell.priceMenu.text = "от 490"
+                cell.imageMenu.image = UIImage(named:"comboImage")
+            } else if dataMenuCustomer[indexPath.row].category.name == CategoryName.drinks {
+                cell.priceMenu.text = "от 550"
+                cell.imageMenu.image = UIImage(named:"drinksImage")
+            } else {
+                cell.priceMenu.text = "от 580"
+                cell.imageMenu.image = UIImage(named:"dessertsImage")
+            }
+            
+            
+        } else if dataMenuCustomer.count < 3 {
+            
+            cell.nameMenu.text = "Секунду пожалуйста!"
+            cell.descriptionMenu.text = "Простите"
+            cell.priceMenu.text = "от 380"
+            cell.imageMenu.image = UIImage(named:"pizzaImage")
+        }
         
         return cell
     }
@@ -175,16 +211,15 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 156
     }
-    
+   
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
        
-        let cellMenu = dataMenu[indexPath.row]
+        let cellMenu = dataMenuCustomer[indexPath.row]
         
-        if let categ = categoriesArr.firstIndex(where: { $0.name == cellMenu.ctegory.name }) {
+        if let categ = categoriesArrCustomer.firstIndex(where: { $0.name == cellMenu.category.name }) {
             
-            var element = categoriesArr
+            var element = categoriesArrCustomer
             
-                
                 
                 for i in 0..<element.count {
                     if element[i].isSelected == true {
@@ -193,7 +228,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
                 }
                 
                 element[categ].isSelected = true
-                categoriesArr = element
+                categoriesArrCustomer = element
                 self.categoryCollectionView.reloadData()
         }
         
@@ -207,7 +242,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoriesArr.count
+        return categoriesArrCustomer.count
        }
        
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -215,9 +250,9 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CategoriesCollectionViewCell
         
          cell.configure(with: CategoriesCollectionViewCell.ViewModel(index: indexPath.row,
-                                                                    name: categoriesArr[indexPath.row].name,
-                                                                    isSelected: categoriesArr[indexPath.row].isSelected))
-        // configureLableCategory(button: cell.categoriBut)
+                                                                    name: categoriesArrCustomer[indexPath.row].name,
+                                                                    isSelected: categoriesArrCustomer[indexPath.row].isSelected))
+        
          cell.delegate = self
          
           return cell

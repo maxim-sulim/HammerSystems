@@ -18,6 +18,8 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     
     private var model = ViewModel()
     
+    //MARK конфигурация кнопки
+    
     func configure(with viewModel: ViewModel) {
         
         model = viewModel
@@ -65,8 +67,6 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         
 }
     
-
-    
     weak var delegate: CategoryCollectionProtocol?
     
     override class func awakeFromNib() {
@@ -76,9 +76,10 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var categoriBut: UIButton!
     
+    
     @IBAction func categoryAction(_ sender: Any) {
                 
-        let element = delegate?.categoriesArr
+        let element = delegate?.categoriesArrCustomer
         
        
         if var element = element {
@@ -92,7 +93,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
             }
             
             element[model.index].isSelected = true
-            delegate?.categoriesArr = element
+            delegate?.categoriesArrCustomer = element
             delegate?.reloadCategories(index: model.index)
         }
         
